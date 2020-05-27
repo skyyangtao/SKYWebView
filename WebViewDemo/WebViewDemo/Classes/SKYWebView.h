@@ -23,6 +23,10 @@
 
 - (void)closeGoBackRecognizer;
 
+- (BOOL)isCanGoBack;
+
+- (BOOL)isCanForward;
+
 @end
 
 
