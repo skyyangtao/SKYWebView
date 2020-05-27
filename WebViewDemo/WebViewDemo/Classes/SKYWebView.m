@@ -86,4 +86,32 @@
     }
 }
 
+- (BOOL)isCanGoBack {
+    return [self backForwardEnableRecognizerWithDirection:UIRectEdgeLeft];
+}
+
+- (BOOL)isCanForward {
+    return [self backForwardEnableRecognizerWithDirection:UIRectEdgeRight];
+}
+
+- (BOOL)backForwardEnableRecognizerWithDirection:(UIRectEdge)direction {
+    if (!self.allowsBackForwardNavigationGestures) {
+        return NO;
+    }
+    id obj = [self valueForKey:@"_gestureRecognizers"];
+    if (obj && [obj isKindOfClass:[NSArray class]]) {
+        NSArray *gestures = obj;
+        for (int i = 0; i < gestures.count; i ++) {
+            UIScreenEdgePanGestureRecognizer *edgePanGesture = gestures[i];
+            if ([edgePanGesture isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+                if (edgePanGesture.edges == direction) {
+                    return edgePanGesture.enabled;
+                    break;
+                }
+            }
+        }
+    }
+    return NO;
+}
+
 @end
