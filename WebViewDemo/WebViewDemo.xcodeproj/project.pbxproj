@@ -15,6 +15,7 @@
 		9D098F7A246E6C180094444D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D098F79246E6C180094444D /* main.m */; };
 		9D098F83246E6C430094444D /* SKYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D098F81246E6C430094444D /* SKYWebView.m */; };
 		9D098F89246E6FD90094444D /* WKWebView+SKYBackForwardGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D098F88246E6FD90094444D /* WKWebView+SKYBackForwardGesture.m */; };
+		9D5E10A7247F925500D231A4 /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E10A6247F925500D231A4 /* CustomWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		9D098F82246E6C430094444D /* SKYWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKYWebView.h; sourceTree = "<group>"; };
 		9D098F87246E6FD90094444D /* WKWebView+SKYBackForwardGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+SKYBackForwardGesture.h"; sourceTree = "<group>"; };
 		9D098F88246E6FD90094444D /* WKWebView+SKYBackForwardGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+SKYBackForwardGesture.m"; sourceTree = "<group>"; };
+		9D5E10A1247F69E400D231A4 /* WebViewDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebViewDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D5E10A6247F925500D231A4 /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 				9D098F88246E6FD90094444D /* WKWebView+SKYBackForwardGesture.m */,
 				9D098F6D246E6C170094444D /* ViewController.h */,
 				9D098F6E246E6C170094444D /* ViewController.m */,
+				9D5E10A1247F69E400D231A4 /* WebViewDemo-Bridging-Header.h */,
 				9D098F70246E6C170094444D /* Main.storyboard */,
 				9D098F73246E6C180094444D /* Assets.xcassets */,
 				9D098F75246E6C180094444D /* LaunchScreen.storyboard */,
@@ -85,6 +89,7 @@
 			children = (
 				9D098F82246E6C430094444D /* SKYWebView.h */,
 				9D098F81246E6C430094444D /* SKYWebView.m */,
+				9D5E10A6247F925500D231A4 /* CustomWebView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				TargetAttributes = {
 					9D098F63246E6C170094444D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -161,6 +167,7 @@
 			files = (
 				9D098F6F246E6C170094444D /* ViewController.m in Sources */,
 				9D098F89246E6FD90094444D /* WKWebView+SKYBackForwardGesture.m in Sources */,
+				9D5E10A7247F925500D231A4 /* CustomWebView.swift in Sources */,
 				9D098F69246E6C170094444D /* AppDelegate.m in Sources */,
 				9D098F7A246E6C180094444D /* main.m in Sources */,
 				9D098F83246E6C430094444D /* SKYWebView.m in Sources */,
@@ -303,7 +310,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9PAM6ED967;
 				INFOPLIST_FILE = WebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -312,7 +321,11 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.WebViewDemo;
+				PRODUCT_MODULE_NAME = WebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebViewDemo/WebViewDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -321,7 +334,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9PAM6ED967;
 				INFOPLIST_FILE = WebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -330,7 +345,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.WebViewDemo;
+				PRODUCT_MODULE_NAME = WebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebViewDemo/WebViewDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
